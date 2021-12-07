@@ -1,0 +1,24 @@
+.moscow ul{
+    list-style: none; /*убираем маркеры списка*/
+    padding-left: 0; /*убираем отступы*/
+    display: inherit;
+    height: 500px;
+    width: 500px;
+    padding-left: 40px;
+}
+.moscow img{
+    border-radius: 10px;
+}
+
+.second_img img{
+    margin-top: 50px;
+    height: 300px;
+}
+
+.moscow.text{
+    margin-right: 50px;
+    float: right;
+    width: 1500px;
+    display: block;
+    font-family: Arial;
+}

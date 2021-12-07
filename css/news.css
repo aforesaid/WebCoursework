@@ -1,0 +1,18 @@
+.news {
+    float: left;
+    color: black;
+    font-family: Arial;
+    width: 350px;
+    background-color: white;
+    line-height: 100%;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.news_header p{
+    margin-left: 10%;
+    font-size: 20px;
+    font-weight: bold;
+}
+.news_content {
+    font-size: 14px;
+}

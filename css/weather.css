@@ -1,0 +1,31 @@
+.weather_main {
+    float: left;
+    width: 600px;
+    border-radius: 5px;
+    background-color: white;
+    margin-right: 10px;
+    margin-left: 50px;
+    font-family: Arial;
+}
+.weather_title p{
+    padding-left: 5%;
+    font-weight: bold;
+    font-size: 30px;
+}
+.weather_card{
+    text-align: center;
+    width: 100px;
+}
+.weather_card_state{
+    height: 25px;
+}
+.weather ul{
+    float: inside;
+    list-style: none; /*убираем маркеры списка*/
+    padding-left: 0; /*убираем отступы*/
+    display: flex;
+    padding-left: 40px;
+}
+.weather_card img{
+    height: 50px;
+}

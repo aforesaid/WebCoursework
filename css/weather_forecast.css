@@ -1,0 +1,21 @@
+.weather_forecast ul{
+    float: inside;
+    list-style: none; /*убираем маркеры списка*/
+    padding-left: 0; /*убираем отступы*/
+    display: flex;
+    padding-left: 40px;
+}
+.weather_forecast_card{
+    font-family: Arial;
+    font-size: 14px;
+    margin: 5px;
+    width: 180px;
+    text-align: center;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.weather_forecast_card img{
+    height: 100px;
+}
