@@ -975,6 +975,16 @@ for (let i = 0; i< forecastCards.length; i++){
             img.style.height = "120px";
         }
     })
+    forecastCards[i].addEventListener('mouseover', (event) =>{
+        let element = forecastCards[i];
+        element.style.backgroundColor = "white";
+    })
+    forecastCards[i].addEventListener('mouseout', (event) =>{
+        let element = forecastCards[i];
+        if(element.classList.contains('current'))
+            return;
+        element.style.backgroundColor = "whitesmoke";
+    })
 }
 
 document.getElementById('btn').onclick = () =>{
