@@ -981,7 +981,7 @@ document.getElementById('btn').onclick = () =>{
     let element = document.getElementById('request_form');
     let formInput = document.getElementById('searchField');
     let value = formInput.value;
-    element.action = '/Weather/' + value + '.html';
+    element.action =  value + '.html';
 }
 
 function changeDataInWeather(id){
@@ -1010,7 +1010,6 @@ function changeDataInWeather(id){
         let weatherImage = currentElement.getElementsByClassName('weather_card_img')[0]
             .getElementsByTagName('img')[0];
         weatherImage.src = item.details[i].filePath;
-
 
     }
 }
