@@ -4,31 +4,31 @@ let weatherFullData = [
          title: "Погода в Москве 06.12.2021",
          details : [
              {
-                 filePath : "svg/cloudy.svg",
+                 filePath : "/WebCoursework/svg/cloudy.svg",
                  time: "0.00",
                  temperature :"−2°С",
                  weatherType : "Облачно"
              },
              {
-                 filePath : "svg/cloudy.svg",
+                 filePath : "/WebCoursework/svg/cloudy.svg",
                  time: "6.00",
                  temperature :"−1°С",
                  weatherType : "Облачно"
              },
              {
-                 filePath : "svg/snowy.svg",
+                 filePath : "/WebCoursework/svg/snowy.svg",
                  time: "12.00",
                  temperature :"−8°С",
                  weatherType : "Сильный снег"
              },
              {
-                 filePath : "svg/cloudy.svg",
+                 filePath : "/WebCoursework/svg/cloudy.svg",
                  time: "18.00",
                  temperature : "−3°С",
                  weatherType : "Прохладно"
              },
              {
-                 filePath: "svg/snowy.svg",
+                 filePath: "/WebCoursework/svg/snowy.svg",
                  time: "23.59",
                  temperature: "−3°С",
                  weatherType: "Сильный снег"
@@ -40,31 +40,31 @@ let weatherFullData = [
         title: "Погода в Москве 07.12.2021",
         details : [
             {
-                filePath : "svg/snowy.svg",
+                filePath : "/WebCoursework/svg/snowy.svg",
                 time: "0.00",
                 temperature :"−4°С",
                 weatherType : "Сильный снег"
             },
             {
-                filePath : "svg/snowy.svg",
+                filePath : "/WebCoursework/svg/snowy.svg",
                 time: "6.00",
                 temperature :"−3°С",
                 weatherType : "Сильный снег"
             },
             {
-                filePath : "svg/low_clouds.svg",
+                filePath : "/WebCoursework/svg/low_clouds.svg",
                 time: "12.00",
                 temperature :"0°С",
                 weatherType : "Малооблачно"
             },
             {
-                filePath : "svg/sunny.svg",
+                filePath : "/WebCoursework/svg/sunny.svg",
                 time: "18.00",
                 temperature : "−3°С",
                 weatherType : "Ясно"
             },
             {
-                filePath: "svg/cloudy.svg",
+                filePath: "/WebCoursework/svg/cloudy.svg",
                 time: "23.59",
                 temperature: "-5°С",
                 weatherType: "Облачноы"
@@ -76,31 +76,31 @@ let weatherFullData = [
         title: "Погода в Москве 08.12.2021",
         details : [
             {
-                filePath : "svg/snowy.svg",
+                filePath : "/WebCoursework/svg/snowy.svg",
                 time: "0.00",
                 temperature :"−2°С",
                 weatherType : "Сильный снег"
             },
             {
-                filePath : "svg/cloudy.svg",
+                filePath : "/WebCoursework/svg/cloudy.svg",
                 time: "6.00",
                 temperature :"−7°С",
                 weatherType : "Облачно"
             },
             {
-                filePath : "svg/cloudy.svg",
+                filePath : "/WebCoursework/svg/cloudy.svg",
                 time: "12.00",
                 temperature :"-7°С",
                 weatherType : "Облачно"
             },
             {
-                filePath : "svg/snowy.svg",
+                filePath : "/WebCoursework/svg/snowy.svg",
                 time: "18.00",
                 temperature : "−8°С",
                 weatherType : "Сильный снег"
             },
             {
-                filePath: "svg/snowy.svg",
+                filePath: "/WebCoursework/svg/snowy.svg",
                 time: "23.59",
                 temperature: "-10°С",
                 weatherType: "Сильный снег"
@@ -112,31 +112,31 @@ let weatherFullData = [
         title: "Погода в Москве 09.12.2021",
         details : [
             {
-                filePath : "svg/snowy.svg",
+                filePath : "/WebCoursework/svg/snowy.svg",
                 time: "0.00",
                 temperature :"−8°С",
                 weatherType : "Сильный снег"
             },
             {
-                filePath : "svg/cloudy.svg",
+                filePath : "/WebCoursework/svg/cloudy.svg",
                 time: "6.00",
                 temperature :"−8°С",
                 weatherType : "Облачно"
             },
             {
-                filePath : "svg/cloudy.svg",
+                filePath : "/WebCoursework/svg/cloudy.svg",
                 time: "12.00",
                 temperature :"-8°С",
                 weatherType : "Облачно"
             },
             {
-                filePath : "svg/low_clouds.svg",
+                filePath : "/WebCoursework/svg/low_clouds.svg",
                 time: "18.00",
                 temperature : "−12°С",
                 weatherType : "Малообачно"
             },
             {
-                filePath: "svg/cloudy.svg",
+                filePath: "/WebCoursework/svg/cloudy.svg",
                 time: "23.59",
                 temperature: "-13°С",
                 weatherType: "Облачно"
@@ -148,31 +148,31 @@ let weatherFullData = [
         title: "Погода в Москве 10.12.2021",
         details: [
             {
-                filePath: "svg/cloudy.svg",
+                filePath: "/WebCoursework/svg/cloudy.svg",
                 time: "0.00",
                 temperature: "−14°С",
                 weatherType: "Облачно"
             },
             {
-                filePath: "svg/cloudy.svg",
+                filePath: "/WebCoursework/svg/cloudy.svg",
                 time: "6.00",
                 temperature: "−14°С",
                 weatherType: "Облачно"
             },
             {
-                filePath: "svg/cloudy.svg",
+                filePath: "/WebCoursework/svg/cloudy.svg",
                 time: "12.00",
                 temperature: "-11°С",
                 weatherType: "Облачно"
             },
             {
-                filePath: "svg/low_clouds.svg",
+                filePath: "/WebCoursework/svg/low_clouds.svg",
                 time: "18.00",
                 temperature: "−12°С",
                 weatherType: "Малообачно"
             },
             {
-                filePath: "svg/cloudy.svg",
+                filePath: "/WebCoursework/svg/cloudy.svg",
                 time: "23.59",
                 temperature: "-13°С",
                 weatherType: "Облачно"
@@ -184,31 +184,31 @@ let weatherFullData = [
         title: "Погода в Москве 11.12.2021",
         details : [
             {
-                filePath : "svg/cloudy.svg",
+                filePath : "/WebCoursework/svg/cloudy.svg",
                 time: "0.00",
                 temperature :"−13°С",
                 weatherType : "Облачно"
             },
             {
-                filePath : "svg/cloudy.svg",
+                filePath : "/WebCoursework/svg/cloudy.svg",
                 time: "6.00",
                 temperature :"−11°С",
                 weatherType : "Облачно"
             },
             {
-                filePath : "svg/cloudy.svg",
+                filePath : "/WebCoursework/svg/cloudy.svg",
                 time: "12.00",
                 temperature :"-8°С",
                 weatherType : "Облачно"
             },
             {
-                filePath : "svg/cloudy.svg",
+                filePath : "/WebCoursework/svg/cloudy.svg",
                 time: "18.00",
                 temperature : "−5°С",
                 weatherType : "Облачно"
             },
             {
-                filePath: "svg/cloudy.svg",
+                filePath: "/WebCoursework/svg/cloudy.svg",
                 time: "23.59",
                 temperature: "-5°С",
                 weatherType: "Облачно"
@@ -220,31 +220,31 @@ let weatherFullData = [
         title: "Погода в Москве 12.12.2021",
         details : [
             {
-                filePath : "svg/snowy.svg",
+                filePath : "/WebCoursework/svg/snowy.svg",
                 time: "0.00",
                 temperature :"−5°С",
                 weatherType : "Сильный снег"
             },
             {
-                filePath : "svg/cloudy.svg",
+                filePath : "/WebCoursework/svg/cloudy.svg",
                 time: "6.00",
                 temperature :"−4°С",
                 weatherType : "Облачно"
             },
             {
-                filePath : "svg/cloudy.svg",
+                filePath : "/WebCoursework/svg/cloudy.svg",
                 time: "12.00",
                 temperature :"-2°С",
                 weatherType : "Облачно"
             },
             {
-                filePath : "/svg/cloudy.svg",
+                filePath : "/WebCoursework/svg/cloudy.svg",
                 time: "18.00",
                 temperature : "−1°С",
                 weatherType : "Облачно"
             },
             {
-                filePath: "/svg/cloudy.svg",
+                filePath: "/WebCoursework/svg/cloudy.svg",
                 time: "23.59",
                 temperature: "-2°С",
                 weatherType: "Облачно"
@@ -256,13 +256,13 @@ let weatherFullData = [
         title: "Погода в Москве 13.12.2021",
         details : [
             {
-                filePath : "/svg/snowy.svg",
+                filePath : "/WebCoursework/svg/snowy.svg",
                 time: "0.00",
                 temperature :"−2°С",
                 weatherType : "Сильный снег"
             },
             {
-                filePath : "/svg/cloudy.svg",
+                filePath : "/WebCoursework/svg/cloudy.svg",
                 time: "6.00",
                 temperature :"−4°С",
                 weatherType : "Облачно"
