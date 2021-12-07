@@ -67,7 +67,7 @@ let weatherFullData = [
                 filePath: "/WebCoursework/svg/cloudy.svg",
                 time: "23.59",
                 temperature: "-5°С",
-                weatherType: "Облачноы"
+                weatherType: "Облачно"
             }
         ]
     },
@@ -355,7 +355,7 @@ let weatherFullData = [
                 filePath: "/WebCoursework/svg/cloudy.svg",
                 time: "23.59",
                 temperature: "-5°С",
-                weatherType: "Облачноы"
+                weatherType: "Облачно"
             }
         ]
     },
@@ -643,7 +643,7 @@ let weatherFullData = [
                 filePath: "/WebCoursework/svg/cloudy.svg",
                 time: "23.59",
                 temperature: "-5°С",
-                weatherType: "Облачноы"
+                weatherType: "Облачно"
             }
         ]
     },
@@ -931,7 +931,7 @@ let weatherFullData = [
                 filePath: "/WebCoursework/svg/cloudy.svg",
                 time: "23.59",
                 temperature: "-5°С",
-                weatherType: "Облачноы"
+                weatherType: "Облачно"
             }
         ]
     }
