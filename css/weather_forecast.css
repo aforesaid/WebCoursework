@@ -6,6 +6,7 @@
     padding-left: 40px;
 }
 .weather_forecast_card{
+    cursor: pointer;
     font-family: Arial;
     font-size: 14px;
     margin: 5px;

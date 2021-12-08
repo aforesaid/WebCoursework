@@ -4,8 +4,8 @@
     display: flow;
 }
 .weather_main {
-    width: 730px;
-    height: 400px;
+    width: 750px;
+    height: 330px;
 }
 .weather_card{
     text-align: center;
