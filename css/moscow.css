@@ -2,8 +2,8 @@
     list-style: none; /*убираем маркеры списка*/
     padding-left: 0; /*убираем отступы*/
     display: inherit;
-    height: 500px;
-    width: 500px;
+    float: left;
+    height: 5%;
     padding-left: 40px;
 }
 .moscow img{
@@ -17,8 +17,13 @@
 
 .moscow.text{
     margin-right: 50px;
-    float: right;
-    width: 1500px;
+    float: left;
+    width: 50%;
     display: block;
     font-family: Arial;
+    padding-left: 40px;
+}
+.title{
+    text-align: center;
+    font-size: 150%;
 }
