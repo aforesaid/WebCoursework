@@ -8,23 +8,29 @@
     font-size: 16px;
 }
 .faq_element{
-    height: 30px ;
     width: 1000px;
     text-align: left;
     background-color: white;
     margin-top: 50px;
     border-radius: 10px;
-    padding-top: 10px;
     font-weight: bold;
 
 }
 .faq_element summary{
-    text-align: center;
+    height: 50px;
+    padding-left: 20px;
+    text-align: left;
+    background-color: white;
+    color: black;
+    padding-top: 10px;
+    border-radius: 5px;
 }
 .faq_element details{
     text-align: center;
     background-color: white;
     border-radius: 10px;
+    color: white;
+    background-color: black;
 }
 .faq_element details p{
     text-align: left;
