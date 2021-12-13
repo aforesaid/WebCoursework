@@ -1,12 +1,11 @@
 const apiKeyId = "32b4014b474127773ed66ea9059e54bd";
 const currentWeatherBaseUri = 'https://api.openweathermap.org/data/2.5/weather';
 const forecastWeatherBaseUri = 'https://api.openweathermap.org/data/2.5/forecast';
-var getCurrentWeather = (cityName) => {
+var getCurrentWeather = (cityName , location) => {
 
     let uri = currentWeatherBaseUri;
-    let location = getLocation();
     if (location){
-        uri += "?lat=" + location.latitude + "&long=" + location.longitude;
+        uri += "?lat=" + location.latitude + "&lon=" + location.longitude;
     }
     else{
         uri += "?q=" + cityName;

@@ -4,15 +4,17 @@ var dictImages = {
 };
 // dictImages.add('13n', );
 window.onload = changeDataInWeather;
-
+navigator.geolocation.getCurrentPosition((position)=>{
+    let location = getLocation(position)
+    changeDataInWeather(defaultCity, location);
+})
 function  getLocation(position) {
-    if (navigator.location) {
-        let position = navigator.location.position;
+    if (position) {
         let	latitude = position.coords.latitude; // излвекаем широту
         let	longitude = position.coords.longitude; // извлекаем долготу
         return {
-            'latitude':latitude,
-            'longtitude': longitude
+            latitude:latitude,
+            longitude: longitude
         }
     }
 }
@@ -1012,10 +1014,9 @@ document.getElementById('btn').onclick = () =>{
     element.action =  value + '.html';
 }
 
-function changeDataInWeather(id){
-    let data = getCurrentWeather(defaultCity);
+function changeDataInWeather(city = defaultCity, location){
+    let data = getCurrentWeather(city, location);
 
-    let item = weatherFullData.find(x => x.id == id);
     let elementWeather = document.getElementsByClassName('weather_main')[0];
     let elementTitleWeather = elementWeather.getElementsByClassName('weather_title')[0];
     elementTitleWeather.textContent = data.title;
