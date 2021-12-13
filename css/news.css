@@ -32,9 +32,8 @@
     color:black; /*меняем цвет ссылок*/
 
 }
-.news_item hr{
-    height: 0px;
-    width: 5px;
+hr{
+    background-color: black;
 }
 .news_item a:hover{
     color: red;
