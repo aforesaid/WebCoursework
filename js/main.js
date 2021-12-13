@@ -1020,7 +1020,7 @@ function changeDataInWeather(city = defaultCity, location){
     var dictImages = {
         "13": "/WebCoursework/svg/snowy.svg",
         "04": "/WebCoursework/svg/cloudy.svg",
-        "02":"/WebCoursework/svg/low_clouds.svg"Ф
+        "02":"/WebCoursework/svg/low_clouds.svg"
     };
 
     let data = getCurrentWeather(city, location);
