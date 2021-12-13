@@ -1,16 +1,16 @@
-const accessKey = "0a24815909291c90afd5026d3389ed66";
-const endpoint = "http://api.mediastack.com/v1/news?sort=published_desc";
+const accessKey = "4_ETGrbTyuk0A7OaKFUhBcZcJBDNFU7rGSUkxu5S42c";
+const endpoint = "https://api.newscatcherapi.com/v2/search?sort_by=date&page_size=100";
+
 
 var getCurrentNews = (placeName) =>{
-    let uri = endpoint + "&keywords=" + placeName + "&access_key=" + accessKey;
-    var response = JSON.parse(httpGet(uri));
+    let uri = endpoint + "&q=" + placeName;
+    var response = JSON.parse(httpGet(uri, accessKey));
 
-    return Array.from(new Set(response.data.map(s => s.title)))
+    return Array.from(new Set(response.articles.map(s => s.title)))
         .map(title => {
             return {
                 title: title,
-                description: response.data.find(s => s.title == title).description,
-                url: response.data.find(s => s.title == title).url
+                url: response.articles.find(s => s.title == title).clean_url
             }
         }).slice(0,5);
 }

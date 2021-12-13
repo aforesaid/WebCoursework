@@ -24,10 +24,13 @@ var getCurrentWeather = (cityName , location) => {
     };
 }
 
-function httpGet(theUrl)
+function httpGet(theUrl, token)
 {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false);
+    if (token) {
+        xmlHttp.setRequestHeader('x-api-key', token);
+    }
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
