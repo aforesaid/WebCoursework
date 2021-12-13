@@ -11,7 +11,6 @@
     <link rel="icon" href="img/icon.ico">
 </head>
 <body>
-<script src="js/weather_api_integration.js" type="text/javascript"></script>
 
 <div class="header">
     <ul>
@@ -25,17 +24,16 @@
 <div class="content">
     <div class="find_info">
         <div class="form">
-            <form id = 'request_form' action="" method="get">
-                <input id="searchField" placeholder="Введите название интересуемого города или страны... (Работает только с Moscow)" type="search">
+            <form id = 'request_form' onsubmit="return false">
+                <input id="searchField" placeholder="Enter the name of the city or country you are interested in..." type="search">
                 <button id="btn" type="submit">Поиск</button>
             </form>
         </div>
     </div>
     <section>
-        <div class="weather weather_main">
-            <div class = "weather weather_title"></div>
-            <div class = "weather weather_img"></div>
-        </div>
+    <div class="weather weather_main">
+
+    </div>
     <div class="news">
         <div class="news_header news">
             <p>Новости</p>
@@ -187,8 +185,8 @@
         </ul>
     </div>
 </div>
-
-
+<script src="js/weather_api_integration.js" type="text/javascript"></script>
 <script src="js/main.js" type="text/javascript"></script>
+
 </body>
 </html>

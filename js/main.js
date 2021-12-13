@@ -1,14 +1,11 @@
 const defaultCity = 'Moscow';
-var dictImages = {
-    '13n': "/WebCoursework/svg/snowy.svg",
-    '04d': "/WebCoursework/svg/cloudy.svg"
-};
-// dictImages.add('13n', );
-window.onload = changeDataInWeather;
+changeDataInWeather(defaultCity);
+
+
 navigator.geolocation.getCurrentPosition((position)=>{
     let location = getLocation(position)
     changeDataInWeather(defaultCity, location);
-})
+});
 function  getLocation(position) {
     if (position) {
         let	latitude = position.coords.latitude; // излвекаем широту
@@ -956,14 +953,14 @@ let weatherFullData = [
             }
         ]
     }
-]
+];
 
 let selectedHeader = document.getElementsByClassName('header_selected')[0]
     .getElementsByTagName('a')[0];
 selectedHeader.style.color = "gray";
 
 const forecastCardClassName = 'weather_forecast_card';
-let forecastCards = document.getElementsByClassName('weather_forecast_card')
+let forecastCards = document.getElementsByClassName('weather_forecast_card');
 for (let i = 0; i< forecastCards.length; i++){
     forecastCards[i].addEventListener('click', (event) =>{
         let element = forecastCards[i];
@@ -995,37 +992,57 @@ for (let i = 0; i< forecastCards.length; i++){
             let img = getImageForecastCard(element);
             img.style.height = "120px";
         }
-    })
+    });
     forecastCards[i].addEventListener('mouseover', (event) =>{
         let element = forecastCards[i];
         element.style.backgroundColor = "white";
-    })
+    });
     forecastCards[i].addEventListener('mouseout', (event) =>{
         let element = forecastCards[i];
         if(element.classList.contains('current'))
             return;
         element.style.backgroundColor = "whitesmoke";
-    })
+    });
 }
 
 document.getElementById('btn').onclick = () =>{
     let element = document.getElementById('request_form');
     let formInput = document.getElementById('searchField');
-    let value = formInput.value;
-    element.action =  value + '.html';
+    let content = formInput.value;
+    let result = changeDataInWeather(content);
+    if (result){
+        formInput.value = "";
+    }
 }
 
+
 function changeDataInWeather(city = defaultCity, location){
+    var dictImages = {
+        "13": "/WebCoursework/svg/snowy.svg",
+        "04": "/WebCoursework/svg/cloudy.svg",
+        "02":"/WebCoursework/svg/low_clouds.svg"Ф
+    };
+
     let data = getCurrentWeather(city, location);
+    if (!data)
+        return false;
+    clearDataInWeather();
 
-    let elementWeather = document.getElementsByClassName('weather_main')[0];
-    let elementTitleWeather = elementWeather.getElementsByClassName('weather_title')[0];
+    let elementWeather = document.getElementsByClassName('weather')[0];
+    let elementWeatherContent = document.createElement('div');
+    elementWeatherContent.classList.add('weather_data');
+
+    let elementTitleWeather = document.createElement('div');
+    elementTitleWeather.classList.add('weather_title');
     elementTitleWeather.textContent = data.title;
+    elementWeatherContent.append(elementTitleWeather);
 
-    let elementImg = document.getElementsByClassName('weather_img')[0];
+    let elementImg = document.createElement('div');
+    elementImg.classList.add('weather_img');
     let img = document.createElement('img');
-    img.src = dictImages[data.icon];
+    img.src = dictImages[data.icon.substr(0,2)];
     elementImg.appendChild(img);
+    elementWeatherContent.append(elementImg);
 
     let divDescription = document.createElement('div')
     divDescription.classList.add('details_description');
@@ -1077,5 +1094,18 @@ function changeDataInWeather(city = defaultCity, location){
     elementCoord.appendChild(longtitudeElement);
     divDescription.appendChild(elementCoord);
 
-    elementWeather.appendChild(divDescription);
+    elementWeatherContent.appendChild(divDescription);
+
+
+    elementWeather.appendChild(elementWeatherContent);
+    return true;
+}
+function clearDataInWeather() {
+        let elements = document.getElementsByClassName('weather_data');
+        if (elements.length > 0) {
+            let element = elements[0];
+            if (element) {
+                element.parentNode.removeChild(element);
+            }
+        }
 }
