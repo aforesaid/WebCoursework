@@ -13,7 +13,7 @@ var getCurrentWeather = (cityName , location) => {
     uri += "&APPID=" + apiKeyId;
     var response =  JSON.parse(httpGet(uri));
     return {
-        title: 'Weather in ' + response['name'],
+        title: response['name'],
         description: response['weather'][0]['description'],
         icon: response['weather'][0]['icon'],
         temperature: parseInt(response['main']['temp']) - 273,

@@ -1,10 +1,10 @@
 const defaultCity = 'Moscow';
-changeDataInWeather(defaultCity);
+changeData(defaultCity);
 
 
 navigator.geolocation.getCurrentPosition((position)=>{
     let location = getLocation(position)
-    changeDataInWeather(defaultCity, location);
+    changeData(defaultCity, location);
 });
 function  getLocation(position) {
     if (position) {
@@ -1009,10 +1009,18 @@ document.getElementById('btn').onclick = () =>{
     let element = document.getElementById('request_form');
     let formInput = document.getElementById('searchField');
     let content = formInput.value;
-    let result = changeDataInWeather(content);
+    let result = changeData(content);
     if (result){
         formInput.value = "";
     }
+}
+
+function changeData(city = defaultCity, location){
+    let placeName = changeDataInWeather(city, location);
+    if (!placeName)
+        return false;
+    let result = changeDataInNews(placeName);
+    return result;
 }
 
 
@@ -1034,7 +1042,7 @@ function changeDataInWeather(city = defaultCity, location){
 
     let elementTitleWeather = document.createElement('div');
     elementTitleWeather.classList.add('weather_title');
-    elementTitleWeather.textContent = data.title;
+    elementTitleWeather.textContent = 'Weather in ' + data.title;
     elementWeatherContent.append(elementTitleWeather);
 
     let elementImg = document.createElement('div');
@@ -1095,10 +1103,9 @@ function changeDataInWeather(city = defaultCity, location){
     divDescription.appendChild(elementCoord);
 
     elementWeatherContent.appendChild(divDescription);
-
-
     elementWeather.appendChild(elementWeatherContent);
-    return true;
+
+    return data.title;
 }
 function clearDataInWeather() {
         let elements = document.getElementsByClassName('weather_data');

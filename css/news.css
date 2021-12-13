@@ -2,17 +2,41 @@
     float: left;
     color: black;
     font-family: Arial;
-    width: 350px;
+    width: 50%;
     background-color: white;
     line-height: 100%;
     border-radius: 5px;
     margin-right: 10px;
 }
+.news ul{
+    list-style: none; /*убираем маркеры списка*/
+    font-size: 12px;
+    font-family: Arial;
+
+}
 .news_header p{
-    margin-left: 10%;
+    padding-left: 10%;
     font-size: 20px;
     font-weight: bold;
 }
 .news_content {
     font-size: 14px;
+}
+.news_item{
+    float: right;
+    width: 100%;
+}
+
+.news_item a{
+    text-decoration: none;
+    color:black; /*меняем цвет ссылок*/
+
+}
+.news_item hr{
+    height: 0px;
+    width: 5px;
+}
+.news_item a:hover{
+    color: red;
+    cursor: pointer;
 }
