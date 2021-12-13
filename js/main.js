@@ -1,3 +1,21 @@
+const defaultCity = 'Moscow';
+var dictImages = {
+    '13n': "/WebCoursework/svg/snowy.svg"
+};
+// dictImages.add('13n', );
+window.onload = changeDataInWeather;
+
+function  getLocation(position) {
+    if (navigator.location) {
+        let position = navigator.location.position;
+        let	latitude = position.coords.latitude; // излвекаем широту
+        let	longitude = position.coords.longitude; // извлекаем долготу
+        return {
+            'latitude':latitude,
+            'longtitude': longitude
+        }
+    }
+}
 let weatherFullData = [
      {
          id: "6",
@@ -995,31 +1013,67 @@ document.getElementById('btn').onclick = () =>{
 }
 
 function changeDataInWeather(id){
+    let data = getCurrentWeather(defaultCity);
+
     let item = weatherFullData.find(x => x.id == id);
     let elementWeather = document.getElementsByClassName('weather_main')[0];
-    let elementTitleWeather = elementWeather.getElementsByClassName('weather_title')[0]
-        .getElementsByTagName('p')[0];
-    elementTitleWeather.textContent = item.title;
+    let elementTitleWeather = elementWeather.getElementsByClassName('weather_title')[0];
+    elementTitleWeather.textContent = data.title;
 
-    let elementsCardsOfWeather = document.getElementsByClassName('weather_card');
-    for (let i = 0; i< elementsCardsOfWeather.length; i++){
-        let currentElement = elementsCardsOfWeather[i];
+    let elementImg = document.getElementsByClassName('weather_img')[0];
+    let img = document.createElement('img');
+    img.src = dictImages[data.icon];
+    elementImg.appendChild(img);
 
-        let weatherTime = currentElement.getElementsByClassName('weather_card_title')[0]
-            .getElementsByTagName('span')[0];
-        weatherTime.textContent = item.details[i].time;
+    let divDescription = document.createElement('div')
+    divDescription.classList.add('details_description');
 
-        let weatherState = currentElement.getElementsByClassName('weather_card_state')[0]
-            .getElementsByTagName('p')[0];
-        weatherState.textContent = item.details[i].weatherType;
+    let elementDescription = document.createElement('div');
+    elementDescription.classList.add('description');
+    elementDescription.textContent = data.description;
+    divDescription.appendChild(elementDescription);
 
-        let weatherTemperature = currentElement.getElementsByClassName('weather_card_temperature')[0]
-            .getElementsByTagName('p')[0];
-        weatherTemperature.textContent = item.details[i].temperature;
+    let elementTemperature = document.createElement('div');
+    elementTemperature.classList.add('temperature');
+    elementTemperature.textContent = data.temperature + ' °C';
 
-        let weatherImage = currentElement.getElementsByClassName('weather_card_img')[0]
-            .getElementsByTagName('img')[0];
-        weatherImage.src = item.details[i].filePath;
+    divDescription.appendChild(elementTemperature);
+    let elementDetailsTemperature = document.createElement('div');
+    elementDetailsTemperature.classList.add('temperature_details');
 
-    }
+    let elementMaxTemperature = document.createElement('div');
+    elementMaxTemperature.classList.add('max_temperature');
+    elementMaxTemperature.textContent = 'Max ' + data.maxTemperature + ' °C';
+
+    elementDetailsTemperature.appendChild(elementMaxTemperature);
+
+    let elementMinTemperature = document.createElement('div');
+    elementMinTemperature.classList.add('min_temperature');
+    elementMinTemperature.textContent = 'Min ' + data.minTemperature + ' °C';
+
+    elementDetailsTemperature.appendChild(elementMinTemperature);
+    divDescription.appendChild(elementDetailsTemperature);
+
+    let elementWinf = document.createElement('div');
+    elementWinf.classList.add('wind');
+    elementWinf.textContent = 'Wind ' + data.wind + ' m/s';
+
+    divDescription.appendChild(elementWinf);
+
+    let elementCoord = document.createElement('div');
+    elementCoord.classList.add('coord');
+
+    let latitudeElement = document.createElement('div');
+    latitudeElement.classList.add('latitude');
+    latitudeElement.textContent = data.coord.lat;
+
+    let longtitudeElement = document.createElement('div');
+    longtitudeElement.classList.add('longtitude');
+    longtitudeElement.textContent = data.coord.lon;
+
+    elementCoord.appendChild(latitudeElement);
+    elementCoord.appendChild(longtitudeElement);
+    divDescription.appendChild(elementCoord);
+
+    elementWeather.appendChild(divDescription);
 }

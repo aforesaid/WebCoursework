@@ -1,20 +1,21 @@
 .weather_main {
     float: left;
-    width: 600px;
+    width: 550px;
     border-radius: 5px;
     background-color: white;
     margin-right: 10px;
     margin-left: 50px;
     font-family: Arial;
 }
-.weather_title p{
+.weather_title {
+    padding-top: 10px;
     padding-left: 5%;
     font-weight: bold;
     font-size: 30px;
 }
 .weather_card{
     text-align: center;
-    width: 100px;
+    width: 5%
 }
 .weather_card_state{
     height: 25px;
@@ -26,6 +27,61 @@
     display: flex;
     padding-left: 40px;
 }
-.weather_card img{
-    height: 50px;
+.weather_img {
+    float: left;
 }
+.weather_img img{
+    padding-top: 20px;
+    padding-left: 40px;
+    height: 100px;
+}
+.weather .details_description{
+    text-align: center;
+    font-family: Arial;
+}
+.weather .description{
+    font-size: 20px;
+    font-weight: lighter;
+    margin-right: 5%;
+    float: right;
+    height: 20px;
+}
+.weather .temperature{
+    font-size: 50px;
+    float: left;
+    padding-top: 8%;
+    padding-left: 7%;
+}
+.weather .temperature_details{
+    display: grid;
+    width: 20%;
+    height: 50px;
+    padding-top: 8%;
+    margin-left: 12%;
+}
+.weather .max_temperature{
+    font-size: 20px;
+    float: left;
+    text-align: right;
+    margin-left: 5%;
+}
+.weather .min_temperature{
+    font-size: 20px;
+    float: left;
+    text-align: right;
+    margin-left: 5%;
+}
+.weather .wind{
+    font-size: 20px;
+    float: left;
+    margin-left: 2%;
+    margin-top: 2%;
+    padding-right: 52%;
+}
+.weather .coord{
+    font-size: 20px;
+    float: right;
+    margin-right: 5%;
+}
+
+
