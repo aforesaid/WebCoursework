@@ -1,6 +1,7 @@
 const defaultCity = 'Moscow';
 var dictImages = {
-    '13n': "/WebCoursework/svg/snowy.svg"
+    '13n': "/WebCoursework/svg/snowy.svg",
+    '04d': "/WebCoursework/svg/cloudy.svg"
 };
 // dictImages.add('13n', );
 window.onload = changeDataInWeather;
