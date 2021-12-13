@@ -10,7 +10,7 @@ var getCurrentNews = (placeName) =>{
         .map(title => {
             return {
                 title: title,
-                url: response.articles.find(s => s.title == title).clean_url
+                url: response.articles.find(s => s.title == title).link
             }
         }).slice(0,5);
 }
