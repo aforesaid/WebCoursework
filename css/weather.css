@@ -125,7 +125,7 @@
         font-size: 50px;
     }
 }
-@media (min-device-width: 300px) and (max-device-width: 650px) {
+@media (min-device-width: 450px) and (max-device-width: 650px) {
     .weather {
         width: 90%;
         margin: 0 auto;
@@ -154,5 +154,38 @@
     }
     .weather .coord{
         font-size: 40px;
+    }
+}
+@media (min-device-width: 300px) and (max-device-width: 600px) {
+    .weather {
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 2%;
+    }
+    .weather .wind{
+        font-size: 50px;
+    }
+    .weather_img img{
+        height: 150px;
+    }
+    .weather .description{
+        font-size: 40px;
+        display: flex;
+    }
+    .weather_title {
+        padding-top: 30px;
+        font-size: 50px;
+    }
+    .weather .temperature{
+        font-size: 90px;
+    }
+    .weather .max_temperature{
+        font-size: 30px;
+    }
+    .weather .min_temperature{
+        font-size: 30px;
+    }
+    .weather .coord{
+        font-size: 30px;
     }
 }

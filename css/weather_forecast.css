@@ -58,23 +58,18 @@
         height: 150px;
     }
 }
-@media (min-device-width: 450px) and (max-device-width: 700px) {
+
+@media (min-device-width: 300px) and (max-device-width: 700px) {
     .weather_forecast_card{
-        width: 500px;
-        font-size: 40px;
-    }
-    .weather_forecast_card img{
-        height: 150px;
-    }
-}
-@media (min-device-width: 300px) and (max-device-width: 450px) {
-    .weather_forecast_card{
-        width: 550px;
-        font-size: 40px;
-        margin: 5%;
+        width: 350px;
+        font-size: 50px;
+        margin: auto;
         border-radius: 5%;
+        margin: 4%;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
     .weather_forecast_card img{
-        height: 200px;
+        height: 50px;
     }
 }
