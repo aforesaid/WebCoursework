@@ -955,9 +955,6 @@ let weatherFullData = [
     }
 ];
 
-let selectedHeader = document.getElementsByClassName('header_selected')[0]
-    .getElementsByTagName('a')[0];
-selectedHeader.style.color = "gray";
 
 const forecastCardClassName = 'weather_forecast_card';
 let forecastCards = document.getElementsByClassName('weather_forecast_card');
