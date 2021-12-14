@@ -1,7 +1,12 @@
 .weather_forecast ul{
-    margin-right: 5%;
-    width: 100px;
-    display: flow;
+    float: inside;
+    list-style: none; /*убираем маркеры списка*/
+    padding-left: 0; /*убираем отступы*/
+    text-align: center;
+    padding-left: 40px;
+}
+.weather_forecast li{
+    display: inline-flex;
 }
 .weather_main {
     width: 750px;
