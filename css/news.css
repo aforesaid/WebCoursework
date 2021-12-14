@@ -32,7 +32,7 @@ hr{
     color: red;
     cursor: pointer;
 }
-@media (min-width: 1450px) {
+@media (min-device-width: 1450px) {
     .news {
         float: left;
         color: black;
@@ -49,7 +49,7 @@ hr{
         font-family: Arial;
     }
 }
-@media (min-width: 1000px) {
+@media (min-device-width: 1000px) and (max-device-width: 1450px){
     .news {
         display: inline-block;
         color: black;
@@ -66,24 +66,24 @@ hr{
         font-family: Arial;
     }
 }
-@media (min-width: 650px) and (max-width: 1000px) {
+@media (min-device-width: 650px) and (max-device-width: 1000px) {
     .news {
         float: left;
         color: black;
         font-family: Arial;
-        width: 300px;
+        width: 400px;
         background-color: white;
-        line-height: 100%;
+        line-height: 150%;
         border-radius: 5px;
         padding-right: 10px;
     }
     .news ul{
         list-style: none; /*убираем маркеры списка*/
-        font-size: 10px;
+        font-size: 25px;
         font-family: Arial;
     }
 }
-@media (max-width: 650px) {
+@media (max-device-width: 650px) {
     .news {
         display: none;
     }
