@@ -1,26 +1,19 @@
-.news {
-    float: left;
-    color: black;
-    font-family: Arial;
-    width: 50%;
+.news{
     background-color: white;
     line-height: 100%;
     border-radius: 5px;
-    margin-right: 10px;
+    padding-right: 10px;
+    margin-right: auto;
 }
 .news ul{
     list-style: none; /*убираем маркеры списка*/
     font-size: 12px;
     font-family: Arial;
-
 }
 .news_header p{
     padding-left: 10%;
     font-size: 20px;
     font-weight: bold;
-}
-.news_content {
-    font-size: 14px;
 }
 .news_item{
     float: right;
@@ -38,4 +31,60 @@ hr{
 .news_item a:hover{
     color: red;
     cursor: pointer;
+}
+@media (min-width: 1450px) {
+    .news {
+        float: left;
+        color: black;
+        font-family: Arial;
+        width: 300px;
+        background-color: white;
+        line-height: 100%;
+        border-radius: 5px;
+        padding-right: 20px;
+    }
+    .news ul{
+        list-style: none; /*убираем маркеры списка*/
+        font-size: 10px;
+        font-family: Arial;
+    }
+}
+@media (min-width: 1000px) {
+    .news {
+        display: inline-block;
+        color: black;
+        font-family: Arial;
+        width: 300px;
+        background-color: white;
+        line-height: 100%;
+        border-radius: 5px;
+        padding-right: 20px;
+    }
+    .news ul{
+        list-style: none; /*убираем маркеры списка*/
+        font-size: 10px;
+        font-family: Arial;
+    }
+}
+@media (min-width: 650px) and (max-width: 1000px) {
+    .news {
+        float: left;
+        color: black;
+        font-family: Arial;
+        width: 300px;
+        background-color: white;
+        line-height: 100%;
+        border-radius: 5px;
+        padding-right: 10px;
+    }
+    .news ul{
+        list-style: none; /*убираем маркеры списка*/
+        font-size: 10px;
+        font-family: Arial;
+    }
+}
+@media (max-width: 650px) {
+    .news {
+        display: none;
+    }
 }
