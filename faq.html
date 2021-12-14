@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
     <title>FAQ Weather/RU</title>
-    <link href="css/head.css" rel="stylesheet">
-    <link href="css/faq.css" rel="stylesheet">
+    <link href="css/head.css?v=<?= time(); ?>" rel="stylesheet">
+    <link href="css/faq.css?v=<?= time(); ?>" rel="stylesheet">
     <link rel="icon" href="img/icon.ico">
 </head>
 <body>
@@ -64,7 +67,7 @@
             </li>
         </ul>
         </div>
-    <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/main.js?v=<?= time(); ?>" type="text/javascript"></script>
 </div>
 </body>
 </html>
