@@ -1005,11 +1005,21 @@ for (let i = 0; i< forecastCards.length; i++){
 document.getElementById('btn').onclick = () =>{
     let element = document.getElementById('request_form');
     let formInput = document.getElementById('searchField');
+    formInput.style.background = "#ededed";
+    formInput.disabled = true;
     let content = formInput.value;
-    let result = changeData(content);
-    if (result){
-        formInput.value = "";
-    }
+
+    setTimeout(() => {
+        try {
+            let result = changeData(content);
+            if (result != false) {
+                formInput.value = "";
+            }
+        } finally {
+            formInput.disabled = false;
+            formInput.style.background = "white";
+        }
+    })
 }
 
 function changeData(city = defaultCity, location){
