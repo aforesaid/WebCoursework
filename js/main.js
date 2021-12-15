@@ -1,6 +1,13 @@
-
-
 const defaultCity = 'Moscow';
+var dictImages = {
+    "13": "/WebCoursework/svg/snowy.svg",
+    "04": "/WebCoursework/svg/cloudy.svg",
+    "02":"/WebCoursework/svg/low_clouds.svg"
+};
+var supportedPlaces = [
+    "Moscow"
+];
+
 changeData(defaultCity);
 
 
@@ -8,6 +15,8 @@ navigator.geolocation.getCurrentPosition((position)=>{
     let location = getLocation(position)
     changeData(defaultCity, location);
 });
+var currentCoords;
+
 function  getLocation(position) {
     if (position) {
         let	latitude = position.coords.latitude; // излвекаем широту
@@ -18,7 +27,8 @@ function  getLocation(position) {
         }
     }
 }
-let weatherFullData = [
+
+var weatherFullData = [
      {
          id: "6",
          title: "Погода в Москве 06.12.2021",
@@ -961,37 +971,6 @@ let weatherFullData = [
 const forecastCardClassName = 'weather_forecast_card';
 let forecastCards = document.getElementsByClassName('weather_forecast_card');
 for (let i = 0; i< forecastCards.length; i++){
-    forecastCards[i].addEventListener('click', (event) =>{
-        let element = forecastCards[i];
-        if (!element.classList.contains('current')){
-            function getImageForecastCard(element){
-                const className = 'weather_forecast_card_image';
-                let img = element.getElementsByClassName(className)[0]
-                    .getElementsByTagName('img')[0];
-                return img;
-            }
-            function setInactiveForecastCard(){
-                let findClassName = forecastCardClassName + " " + "current";
-                let elements = document.getElementsByClassName(findClassName);
-                for (let i = 0; i < elements.length; i++) {
-                    let img = getImageForecastCard(elements[i]);
-                    img.style.height = "100px"
-                    elements[i].style.backgroundColor = "whitesmoke"
-
-                    elements[i].classList.remove('current');
-                }
-            }
-            setInactiveForecastCard();
-            element.classList.add('current');
-            element.style.backgroundColor = "white";
-            let id = element.getElementsByClassName('weather_forecast_card_day')[0]
-                .getElementsByTagName('p')[0]
-                .textContent;
-            changeDataInWeather(id);
-            let img = getImageForecastCard(element);
-            img.style.height = "120px";
-        }
-    });
     forecastCards[i].addEventListener('mouseover', (event) =>{
         let element = forecastCards[i];
         element.style.backgroundColor = "white";
@@ -1029,19 +1008,87 @@ function changeData(city = defaultCity, location){
     if (!placeName)
         return false;
     let result = changeDataInNews(placeName);
+    if (result != false)
+        changeDataInWeekWeather();
     return result;
+}
+function changeDataInWeekWeather(){
+    if (!currentCoords)
+        return false;
+    clearDataInWeekWeather();
+    let data = getFutureWeather(currentCoords).slice(0,7);
+
+    let ulElement = document.getElementsByClassName('weather_forecast')[0]
+        .getElementsByTagName('ul')[0];
+
+    for (let i = 0; i < data.length; i++){
+        let liCard = buildWeatherCard(data[i]);
+        ulElement.appendChild(liCard);
+    }
+}
+function buildWeatherCard(data) {
+    let liCard = document.createElement('li');
+    let divCard = document.createElement('div');
+    liCard.appendChild(divCard);
+    divCard.classList.add('weather_forecast_card');
+
+    let dayOfWeekElement = document.createElement('div');
+    dayOfWeekElement.classList.add('weather_forecast_card_day_of_week');
+    let pDayOfWeekElement = document.createElement('p');
+    pDayOfWeekElement.textContent = data.dateTime.toLocaleDateString('en-US', {weekday: "long"});
+
+    dayOfWeekElement.appendChild(pDayOfWeekElement);
+    divCard.appendChild(dayOfWeekElement);
+
+    let dayElement = document.createElement('div');
+    dayElement.classList.add('weather_forecast_card_day');
+    let pDayElement = document.createElement('p');
+    pDayElement.textContent = data.dateTime.toLocaleDateString();
+
+    dayElement.appendChild(pDayElement);
+    divCard.appendChild(dayElement);
+
+    let divImgElement = document.createElement('div');
+    divImgElement.classList.add('weather_forecast_card_image');
+    let imgElement = document.createElement('img');
+    imgElement.src = dictImages[data.img.substr(0, 2)];
+
+    divImgElement.appendChild(imgElement);
+    divCard.appendChild(divImgElement);
+
+    let temperatureElement = document.createElement('div');
+    temperatureElement.classList.add('weather_forecast_card_temperature');
+    let pTemperatureElement = document.createElement('p');
+    pTemperatureElement.textContent = data.temperature + " °C";
+
+    temperatureElement.appendChild(pTemperatureElement);
+    divCard.appendChild(temperatureElement);
+
+    let nightTemperatureElement = document.createElement('div');
+    nightTemperatureElement.classList.add('weather_forecast_card_night');
+    let pNightTemperatureElement = document.createElement('p');
+    pNightTemperatureElement.textContent = "night " + data.night + " °C";
+
+    nightTemperatureElement.appendChild(pNightTemperatureElement);
+    divCard.appendChild(nightTemperatureElement);
+
+    return liCard;
+}
+function clearDataInWeekWeather(){
+    let elementCard = document.getElementsByClassName('weather_forecast')[0];
+    if (elementCard) {
+        let ulCard = elementCard.getElementsByTagName('ul')[0];
+
+        while (ulCard.childNodes.length > 0) {
+            let child = ulCard.childNodes[0];
+            child.parentNode.removeChild(child);
+        }
+    }
 }
 
 
 function changeDataInWeather(city = defaultCity, location){
-    var dictImages = {
-        "13": "/WebCoursework/svg/snowy.svg",
-        "04": "/WebCoursework/svg/cloudy.svg",
-        "02":"/WebCoursework/svg/low_clouds.svg"
-    };
-    var supportedPlaces = [
-        "Moscow"
-    ]
+
 
     let data = getCurrentWeather(city, location);
     if (!data)
@@ -1111,7 +1158,12 @@ function changeDataInWeather(city = defaultCity, location){
 
     let latitudeElement = document.createElement('div');
     latitudeElement.classList.add('latitude');
+
     latitudeElement.textContent = data.coord.lat;
+    currentCoords = {
+        lat: data.coord.lat,
+        lon: data.coord.lon
+    }
 
     let longtitudeElement = document.createElement('div');
     longtitudeElement.classList.add('longtitude');

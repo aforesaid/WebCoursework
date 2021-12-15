@@ -9,7 +9,6 @@
     display: inline-flex;
 }
 .weather_forecast_card{
-    cursor: pointer;
     font-family: Arial;
     font-size: 14px;
     width: 180px;
@@ -27,7 +26,6 @@
 
 @media (min-device-width: 1000px) and (max-device-width: 1450px) {
     .weather_forecast_card{
-        cursor: pointer;
         font-family: Arial;
         font-size: 14px;
         width: 180px;
@@ -44,7 +42,6 @@
 }
 @media (min-device-width: 700px) and (max-device-width: 1000px) {
     .weather_forecast_card{
-        cursor: pointer;
         font-family: Arial;
         font-size: 44px;
         width: 300px;
