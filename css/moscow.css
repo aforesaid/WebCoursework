@@ -27,3 +27,39 @@
     text-align: center;
     font-size: 150%;
 }
+
+@media (min-device-width: 1000px) and (max-device-width: 1200px) {
+    .moscow.text{
+        width: 380px;
+    }
+}
+@media (min-device-width: 750px) and (max-device-width: 1000px) {
+    .moscow.text{
+        width: 500px;
+    }
+    .second_img img{
+        margin-top: 50px;
+        height: 200px;
+    }
+}
+@media (min-device-width: 500px) and (max-device-width: 750px) {
+    .moscow.text{
+        width: 500px;
+        font-size: 20px;
+    }
+    .second_img img{
+        margin-top: 50px;
+        height: 200px;
+    }
+}
+@media (min-device-width: 250px) and (max-device-width: 500px) {
+    .moscow.text{
+        width: 100%;
+        font-size: 40px;
+    }
+    .second_img img{
+        width: 100%;
+        margin-top: 50px;
+        height: 250px;
+    }
+}

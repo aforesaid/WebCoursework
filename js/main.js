@@ -1027,6 +1027,9 @@ function changeDataInWeather(city = defaultCity, location){
         "04": "/WebCoursework/svg/cloudy.svg",
         "02":"/WebCoursework/svg/low_clouds.svg"
     };
+    var supportedPlaces = [
+        "Moscow"
+    ]
 
     let data = getCurrentWeather(city, location);
     if (!data)
@@ -1039,7 +1042,14 @@ function changeDataInWeather(city = defaultCity, location){
 
     let elementTitleWeather = document.createElement('div');
     elementTitleWeather.classList.add('weather_title');
-    elementTitleWeather.textContent = 'Weather in ' + data.title;
+    let elementATitle = document.createElement('a');
+    elementATitle.textContent = 'Weather in ' + data.title;
+
+    if (supportedPlaces.includes(data.title)){
+        elementATitle.href = "/WebCoursework/" + data.title + ".html";
+    }
+    elementTitleWeather.appendChild(elementATitle);
+
     elementWeatherContent.append(elementTitleWeather);
 
     let elementImg = document.createElement('div');
