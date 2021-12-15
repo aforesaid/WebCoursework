@@ -13,14 +13,14 @@ var getCurrentWeather = (cityName , location) => {
     uri += "&APPID=" + apiKeyId;
     let response =  JSON.parse(httpGet(uri));
     return {
-        title: response['name'],
-        description: response['weather'][0]['description'],
-        icon: response['weather'][0]['icon'],
-        temperature: parseInt(response['main']['temp']) - 273,
-        maxTemperature: parseInt(response['main']['temp_max']) - 273,
-        minTemperature: parseInt(response['main']['temp_min']) - 273,
-        wind: response['wind']['speed'],
-        coord: response['coord']
+        title: response.name,
+        description: response.weather[0].description,
+        icon: getImgSrc(response.weather[0].icon),
+        temperature: parseInt(response.main.temp) - 273,
+        maxTemperature: parseInt(response.main.temp_max) - 273,
+        minTemperature: parseInt(response.main.temp_min) - 273,
+        wind: response.wind.speed,
+        coord: response.coord
     };
 }
 var getFutureWeather = (location) =>{
@@ -34,11 +34,15 @@ var getFutureWeather = (location) =>{
                 dateTime: new Date(x.dt * 1000),
                 temperature: parseInt(x.temp.day - 273),
                 night: parseInt(x.temp.eve - 273),
-                img: x.weather[0].icon
+                img: getImgSrc(x.weather[0].icon)
             }
         });
     }
 };
+function getImgSrc(imgName)
+{
+    return "/WebCoursework/png/" + imgName+ ".png";
+}
 
 function httpGet(theUrl, token)
 {
