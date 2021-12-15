@@ -14,6 +14,11 @@
     font-weight: bold;
     font-size: 30px;
 }
+
+.weather_title a{
+    text-decoration: none;
+}
+
 .weather_card{
     text-align: center;
     width: 5%
