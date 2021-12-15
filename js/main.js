@@ -1,3 +1,5 @@
+
+
 const defaultCity = 'Moscow';
 changeData(defaultCity);
 
