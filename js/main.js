@@ -987,6 +987,8 @@ document.getElementById('btn').onclick = () =>{
     let element = document.getElementById('request_form');
     let formInput = document.getElementById('searchField');
     formInput.style.background = "#ededed";
+    formInput.style.color = "gray";
+
     formInput.disabled = true;
     let content = formInput.value;
 
@@ -999,6 +1001,8 @@ document.getElementById('btn').onclick = () =>{
         } finally {
             formInput.disabled = false;
             formInput.style.background = "white";
+            formInput.style.color = "black";
+
         }
     })
 }
