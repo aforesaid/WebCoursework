@@ -2,29 +2,15 @@ const defaultCity = 'Moscow';
 var supportedPlaces = [
     "Moscow"
 ];
-
-changeData(defaultCity);
-
-
-navigator.geolocation.getCurrentPosition((position)=>{
-    let location = getLocation(position)
-    changeData(defaultCity, location);
-});
 var currentCoords;
+navigator.geolocation.getCurrentPosition((position)=>{
+    currentCoords = getLocation(position)
+});
 
-function  getLocation(position) {
-    if (position) {
-        let	latitude = position.coords.latitude; // излвекаем широту
-        let	longitude = position.coords.longitude; // извлекаем долготу
-        return {
-            latitude:latitude,
-            longitude: longitude
-        }
-    }
-}
+changeData(defaultCity, currentCoords);
 
 const forecastCardClassName = 'weather_forecast_card';
-let forecastCards = document.getElementsByClassName('weather_forecast_card');
+let forecastCards = document.getElementsByClassName(forecastCardClassName);
 for (let i = 0; i< forecastCards.length; i++){
     forecastCards[i].addEventListener('mouseover', (event) =>{
         let element = forecastCards[i];
@@ -62,6 +48,17 @@ document.getElementById('btn').onclick = () =>{
     })
 }
 
+function  getLocation(position) {
+    if (position) {
+        let	latitude = position.coords.latitude; // излвекаем широту
+        let	longitude = position.coords.longitude; // извлекаем долготу
+        return {
+            latitude:latitude,
+            longitude: longitude
+        }
+    }
+}
+
 function changeData(city = defaultCity, location){
     let placeName = changeDataInWeather(city, location);
     if (!placeName)
@@ -71,6 +68,7 @@ function changeData(city = defaultCity, location){
         changeDataInWeekWeather();
     return result;
 }
+
 function changeDataInWeekWeather(){
     if (!currentCoords)
         return false;
@@ -85,6 +83,7 @@ function changeDataInWeekWeather(){
         ulElement.appendChild(liCard);
     }
 }
+
 function buildWeatherCard(data) {
     let liCard = document.createElement('li');
     let divCard = document.createElement('div');
@@ -133,6 +132,7 @@ function buildWeatherCard(data) {
 
     return liCard;
 }
+
 function clearDataInWeekWeather(){
     let elementCard = document.getElementsByClassName('weather_forecast')[0];
     if (elementCard) {
@@ -145,9 +145,7 @@ function clearDataInWeekWeather(){
     }
 }
 
-
 function changeDataInWeather(city = defaultCity, location){
-
 
     let data = getCurrentWeather(city, location);
     if (!data)
@@ -237,6 +235,7 @@ function changeDataInWeather(city = defaultCity, location){
 
     return data.title;
 }
+
 function clearDataInWeather() {
         let elements = document.getElementsByClassName('weather_data');
         if (elements.length > 0) {
