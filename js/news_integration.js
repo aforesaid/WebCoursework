@@ -1,4 +1,4 @@
-const accessKey = "4_ETGrbTyuk0A7OaKFUhBcZcJBDNFU7rGSUkxu5S42c";
+const accessKey = "WKW5LGBxn_-zqSPR1r8flotXGBG7lb2fIs93k0AjOTk";
 const endpoint = "https://api.newscatcherapi.com/v2/search?sort_by=date&page_size=100";
 
 
